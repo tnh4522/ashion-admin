@@ -1,4 +1,261 @@
+import {Menu} from 'antd';
+import {Link} from 'react-router-dom';
+
+const items = [
+    {
+        key: 'sub1',
+        label: <Link to="/">Dashboard</Link>,
+        icon: <i className="menu-icon tf-icons bx bx-home-circle"></i>
+    },
+    {
+        key: 'sub2',
+        label: 'Layouts',
+        icon: <i className="menu-icon tf-icons bx bx-layout"></i>,
+        children: [
+            {
+                key: 'layout1',
+                label: <Link to="/layouts-without-menu">Without menu</Link>,
+            },
+            {
+                key: 'layout2',
+                label: <Link to="/layouts-without-navbar">Without navbar</Link>,
+            },
+            {
+                key: 'layout3',
+                label: <Link to="/layouts-container">Container</Link>,
+            },
+            {
+                key: 'layout4',
+                label: <Link to="/layouts-fluid">Fluid</Link>,
+            },
+            {
+                key: 'layout5',
+                label: <Link to="/layouts-blank">Blank</Link>,
+            },
+        ],
+    },
+    {
+        key: 'sub3',
+        label: 'Account Settings',
+        icon: <i className="menu-icon tf-icons bx bx-dock-top"></i>,
+        children: [
+            {
+                key: 'account',
+                label: <Link to="/account">Account</Link>,
+            },
+            {
+                key: 'notifications',
+                label: <Link to="/pages-account-settings-notifications">Notifications</Link>,
+            },
+            {
+                key: 'connections',
+                label: <Link to="/pages-account-settings-connections">Connections</Link>,
+            },
+        ],
+    },
+    {
+        key: 'sub4',
+        label: 'Authentications',
+        icon: <i className="menu-icon tf-icons bx bx-lock-open-alt"></i>,
+        children: [
+            {
+                key: 'login',
+                label: <Link to="/login" target="_blank">Login</Link>,
+            },
+            {
+                key: 'register',
+                label: <Link to="/register" target="_blank">Register</Link>,
+            },
+            {
+                key: 'forgot-password',
+                label: <Link to="/auth-forgot-password-basic" target="_blank">Forgot Password</Link>,
+            },
+        ],
+    },
+    {
+        key: 'sub5',
+        label: 'Misc',
+        icon: <i className="menu-icon tf-icons bx bx-cube-alt"></i>,
+        children: [
+            {
+                key: 'error',
+                label: <Link to="/pages-misc-error">Error</Link>,
+            },
+            {
+                key: 'under-maintenance',
+                label: <Link to="/pages-misc-under-maintenance">Under Maintenance</Link>,
+            },
+        ],
+    },
+    {
+        key: 'components',
+        label: 'Components',
+        icon: <i className="menu-icon tf-icons bx bx-copy"></i>,
+        children: [
+            {
+                key: 'cards',
+                label: <Link to="/cards-basic">Cards</Link>,
+            },
+            {
+                key: 'accordion',
+                label: <Link to="/ui-accordion">Accordion</Link>,
+            },
+            {
+                key: 'alerts',
+                label: <Link to="/ui-alerts">Alerts</Link>,
+            },
+            {
+                key: 'badges',
+                label: <Link to="/ui-badges">Badges</Link>,
+            },
+            {
+                key: 'buttons',
+                label: <Link to="/ui-buttons">Buttons</Link>,
+            },
+            {
+                key: 'carousel',
+                label: <Link to="/ui-carousel">Carousel</Link>,
+            },
+            {
+                key: 'collapse',
+                label: <Link to="/ui-collapse">Collapse</Link>,
+            },
+            {
+                key: 'dropdowns',
+                label: <Link to="/ui-dropdowns">Dropdowns</Link>,
+            },
+            {
+                key: 'footer',
+                label: <Link to="/ui-footer">Footer</Link>,
+            },
+            {
+                key: 'list-groups',
+                label: <Link to="/ui-list-groups">List groups</Link>,
+            },
+            {
+                key: 'modals',
+                label: <Link to="/ui-modals">Modals</Link>,
+            },
+            {
+                key: 'navbar',
+                label: <Link to="/ui-navbar">Navbar</Link>,
+            },
+            {
+                key: 'offcanvas',
+                label: <Link to="/ui-offcanvas">Offcanvas</Link>,
+            },
+            {
+                key: 'pagination-breadcrumbs',
+                label: <Link to="/ui-pagination-breadcrumbs">Pagination & Breadcrumbs</Link>,
+            },
+            {
+                key: 'progress',
+                label: <Link to="/ui-progress">Progress</Link>,
+            },
+            {
+                key: 'spinners',
+                label: <Link to="/ui-spinners">Spinners</Link>,
+            },
+            {
+                key: 'tabs-pills',
+                label: <Link to="/ui-tabs-pills">Tabs & Pills</Link>,
+            },
+            {
+                key: 'toasts',
+                label: <Link to="/ui-toasts">Toasts</Link>,
+            },
+            {
+                key: 'tooltips-popovers',
+                label: <Link to="/ui-tooltips-popovers">Tooltips & Popovers</Link>,
+            },
+            {
+                key: 'typography',
+                label: <Link to="/ui-typography">Typography</Link>,
+            },
+        ],
+    },
+    {
+        key: 'extended-ui',
+        label: 'Extended UI',
+        icon: <i className="menu-icon tf-icons bx bx-copy"></i>,
+        children: [
+            {
+                key: 'perfect-scrollbar',
+                label: <Link to="/extended-ui-perfect-scrollbar">Perfect Scrollbar</Link>,
+            },
+            {
+                key: 'text-divider',
+                label: <Link to="/extended-ui-text-divider">Text Divider</Link>,
+            },
+        ],
+    },
+    {
+        key: 'icons',
+        label: 'Icons',
+        icon: <i className="menu-icon tf-icons bx bx-crown"></i>,
+        children: [
+            {
+                key: 'boxicons',
+                label: <Link to="/icons-boxicons">Boxicons</Link>,
+            },
+        ],
+    },
+    {
+        key: 'forms-tables',
+        label: 'Forms & Tables',
+        icon: <i className="menu-icon tf-icons bx bx-detail"></i>,
+        children: [
+            {
+                key: 'form-elements',
+                label: 'Form Elements',
+                children: [
+                    {
+                        key: 'basic-inputs',
+                        label: <Link to="/forms-basic-inputs">Basic Inputs</Link>,
+                    },
+                    {
+                        key: 'input-groups',
+                        label: <Link to="/forms-input-groups">Input Groups</Link>,
+                    },
+                ],
+            },
+            {
+                key: 'form-layouts',
+                label: 'Form Layouts',
+                children: [
+                    {
+                        key: 'vertical-form',
+                        label: <Link to="/form-layouts-vertical">Vertical Form</Link>,
+                    },
+                    {
+                        key: 'horizontal-form',
+                        label: <Link to="/form-layouts-horizontal">Horizontal Form</Link>,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        key: 'tables',
+        label: <Link to="/tables-basic">Tables</Link>,
+        icon: <i className="menu-icon tf-icons bx bx-table"></i>,
+    },
+    {
+        key: 'support',
+        label: <Link to="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                     target="_blank">Support</Link>,
+        icon: <i className="menu-icon tf-icons bx bx-support"></i>,
+    },
+    {
+        key: 'documentation',
+        label: <Link to="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                     target="_blank">Documentation</Link>,
+        icon: <i className="menu-icon tf-icons bx bx-file"></i>,
+    },
+];
+
 function SideBar() {
+
     return (
         <aside id="layout-menu" className="layout-menu menu-vertical menu bg-menu-theme">
             <div className="app-brand demo">
@@ -58,7 +315,7 @@ function SideBar() {
                   </g>
                 </svg>
               </span>
-                    <span className="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+                    <span className="app-brand-text demo menu-text fw-bolder ms-2">Ashion</span>
                 </a>
 
                 <a href="/"
@@ -69,330 +326,340 @@ function SideBar() {
 
             <div className="menu-inner-shadow"></div>
 
+            <Menu
+                style={{
+                    width: 256,
+                    marginTop: 16,
+                }}
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                mode="inline"
+                items={items}
+            />
+
             <ul className="menu-inner py-1">
-
-                <li className="menu-item active">
-                    <a href="index.html" className="menu-link">
-                        <i className="menu-icon tf-icons bx bx-home-circle"></i>
-                        <div data-i18n="Analytics">Dashboard</div>
-                    </a>
-                </li>
-
-
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-layout"></i>
-                        <div data-i18n="Layouts">Layouts</div>
-                    </a>
-
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="layouts-without-menu.html" className="menu-link">
-                                <div data-i18n="Without menu">Without menu</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="layouts-without-navbar.html" className="menu-link">
-                                <div data-i18n="Without navbar">Without navbar</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="layouts-container.html" className="menu-link">
-                                <div data-i18n="Container">Container</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="layouts-fluid.html" className="menu-link">
-                                <div data-i18n="Fluid">Fluid</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="layouts-blank.html" className="menu-link">
-                                <div data-i18n="Blank">Blank</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li className="menu-header small text-uppercase">
-                    <span className="menu-header-text">Pages</span>
-                </li>
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-dock-top"></i>
-                        <div data-i18n="Account Settings">Account Settings</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="pages-account-settings-account.html" className="menu-link">
-                                <div data-i18n="Account">Account</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="pages-account-settings-notifications.html" className="menu-link">
-                                <div data-i18n="Notifications">Notifications</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="pages-account-settings-connections.html" className="menu-link">
-                                <div data-i18n="Connections">Connections</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                        <div data-i18n="Authentications">Authentications</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="auth-login-basic.html" className="menu-link" target="_blank">
-                                <div data-i18n="Basic">Login</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="auth-register-basic.html" className="menu-link" target="_blank">
-                                <div data-i18n="Basic">Register</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="auth-forgot-password-basic.html" className="menu-link" target="_blank">
-                                <div data-i18n="Basic">Forgot Password</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-cube-alt"></i>
-                        <div data-i18n="Misc">Misc</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="pages-misc-error.html" className="menu-link">
-                                <div data-i18n="Error">Error</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="pages-misc-under-maintenance.html" className="menu-link">
-                                <div data-i18n="Under Maintenance">Under Maintenance</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li className="menu-header small text-uppercase"><span
-                    className="menu-header-text">Components</span></li>
-
-                <li className="menu-item">
-                    <a href="cards-basic.html" className="menu-link">
-                        <i className="menu-icon tf-icons bx bx-collection"></i>
-                        <div data-i18n="Basic">Cards</div>
-                    </a>
-                </li>
-
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-box"></i>
-                        <div data-i18n="User interface">User interface</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="ui-accordion.html" className="menu-link">
-                                <div data-i18n="Accordion">Accordion</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-alerts.html" className="menu-link">
-                                <div data-i18n="Alerts">Alerts</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-badges.html" className="menu-link">
-                                <div data-i18n="Badges">Badges</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-buttons.html" className="menu-link">
-                                <div data-i18n="Buttons">Buttons</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-carousel.html" className="menu-link">
-                                <div data-i18n="Carousel">Carousel</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-collapse.html" className="menu-link">
-                                <div data-i18n="Collapse">Collapse</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-dropdowns.html" className="menu-link">
-                                <div data-i18n="Dropdowns">Dropdowns</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-footer.html" className="menu-link">
-                                <div data-i18n="Footer">Footer</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-list-groups.html" className="menu-link">
-                                <div data-i18n="List Groups">List groups</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-modals.html" className="menu-link">
-                                <div data-i18n="Modals">Modals</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-navbar.html" className="menu-link">
-                                <div data-i18n="Navbar">Navbar</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-offcanvas.html" className="menu-link">
-                                <div data-i18n="Offcanvas">Offcanvas</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-pagination-breadcrumbs.html" className="menu-link">
-                                <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-progress.html" className="menu-link">
-                                <div data-i18n="Progress">Progress</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-spinners.html" className="menu-link">
-                                <div data-i18n="Spinners">Spinners</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-tabs-pills.html" className="menu-link">
-                                <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-toasts.html" className="menu-link">
-                                <div data-i18n="Toasts">Toasts</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-tooltips-popovers.html" className="menu-link">
-                                <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="ui-typography.html" className="menu-link">
-                                <div data-i18n="Typography">Typography</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                {/*<li className="menu-item active">*/}
+                {/*    <a href="index.html" className="menu-link">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-home-circle"></i>*/}
+                {/*        <div data-i18n="Analytics">Dashboard</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
 
 
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-copy"></i>
-                        <div data-i18n="Extended UI">Extended UI</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="extended-ui-perfect-scrollbar.html" className="menu-link">
-                                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="extended-ui-text-divider.html" className="menu-link">
-                                <div data-i18n="Text Divider">Text Divider</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-layout"></i>*/}
+                {/*        <div data-i18n="Layouts">Layouts</div>*/}
+                {/*    </a>*/}
 
-                <li className="menu-item">
-                    <a href="icons-boxicons.html" className="menu-link">
-                        <i className="menu-icon tf-icons bx bx-crown"></i>
-                        <div data-i18n="Boxicons">Boxicons</div>
-                    </a>
-                </li>
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="layouts-without-menu.html" className="menu-link">*/}
+                {/*                <div data-i18n="Without menu">Without menu</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="layouts-without-navbar.html" className="menu-link">*/}
+                {/*                <div data-i18n="Without navbar">Without navbar</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="layouts-container.html" className="menu-link">*/}
+                {/*                <div data-i18n="Container">Container</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="layouts-fluid.html" className="menu-link">*/}
+                {/*                <div data-i18n="Fluid">Fluid</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="layouts-blank.html" className="menu-link">*/}
+                {/*                <div data-i18n="Blank">Blank</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+
+                {/*<li className="menu-header small text-uppercase">*/}
+                {/*    <span className="menu-header-text">Pages</span>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a href="#" className="menu-link menu-toggle" onClick={e => e.preventDefault()}>*/}
+                {/*        <i className="menu-icon tf-icons bx bx-dock-top"></i>*/}
+                {/*        <div data-i18n="Account Settings">Account Settings</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="pages-account-settings-account.html" className="menu-link">*/}
+                {/*                <div data-i18n="Account">Account</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="pages-account-settings-notifications.html" className="menu-link">*/}
+                {/*                <div data-i18n="Notifications">Notifications</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="pages-account-settings-connections.html" className="menu-link">*/}
+                {/*                <div data-i18n="Connections">Connections</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a href="#" className="menu-link menu-toggle" onClick={e => e.preventDefault()}>*/}
+                {/*        <i className="menu-icon tf-icons bx bx-lock-open-alt"></i>*/}
+                {/*        <div data-i18n="Authentications">Authentications</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="auth-login-basic.html" className="menu-link" target="_blank">*/}
+                {/*                <div data-i18n="Basic">Login</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="auth-register-basic.html" className="menu-link" target="_blank">*/}
+                {/*                <div data-i18n="Basic">Register</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="auth-forgot-password-basic.html" className="menu-link" target="_blank">*/}
+                {/*                <div data-i18n="Basic">Forgot Password</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-cube-alt"></i>*/}
+                {/*        <div data-i18n="Misc">Misc</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="pages-misc-error.html" className="menu-link">*/}
+                {/*                <div data-i18n="Error">Error</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="pages-misc-under-maintenance.html" className="menu-link">*/}
+                {/*                <div data-i18n="Under Maintenance">Under Maintenance</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+
+                {/*<li className="menu-header small text-uppercase"><span*/}
+                {/*    className="menu-header-text">Components</span></li>*/}
+
+                {/*<li className="menu-item">*/}
+                {/*    <a href="cards-basic.html" className="menu-link">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-collection"></i>*/}
+                {/*        <div data-i18n="Basic">Cards</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
+
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-box"></i>*/}
+                {/*        <div data-i18n="User interface">User interface</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-accordion.html" className="menu-link">*/}
+                {/*                <div data-i18n="Accordion">Accordion</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-alerts.html" className="menu-link">*/}
+                {/*                <div data-i18n="Alerts">Alerts</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-badges.html" className="menu-link">*/}
+                {/*                <div data-i18n="Badges">Badges</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-buttons.html" className="menu-link">*/}
+                {/*                <div data-i18n="Buttons">Buttons</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-carousel.html" className="menu-link">*/}
+                {/*                <div data-i18n="Carousel">Carousel</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-collapse.html" className="menu-link">*/}
+                {/*                <div data-i18n="Collapse">Collapse</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-dropdowns.html" className="menu-link">*/}
+                {/*                <div data-i18n="Dropdowns">Dropdowns</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-footer.html" className="menu-link">*/}
+                {/*                <div data-i18n="Footer">Footer</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-list-groups.html" className="menu-link">*/}
+                {/*                <div data-i18n="List Groups">List groups</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-modals.html" className="menu-link">*/}
+                {/*                <div data-i18n="Modals">Modals</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-navbar.html" className="menu-link">*/}
+                {/*                <div data-i18n="Navbar">Navbar</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-offcanvas.html" className="menu-link">*/}
+                {/*                <div data-i18n="Offcanvas">Offcanvas</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-pagination-breadcrumbs.html" className="menu-link">*/}
+                {/*                <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-progress.html" className="menu-link">*/}
+                {/*                <div data-i18n="Progress">Progress</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-spinners.html" className="menu-link">*/}
+                {/*                <div data-i18n="Spinners">Spinners</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-tabs-pills.html" className="menu-link">*/}
+                {/*                <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-toasts.html" className="menu-link">*/}
+                {/*                <div data-i18n="Toasts">Toasts</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-tooltips-popovers.html" className="menu-link">*/}
+                {/*                <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="ui-typography.html" className="menu-link">*/}
+                {/*                <div data-i18n="Typography">Typography</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
 
 
-                <li className="menu-header small text-uppercase"><span
-                    className="menu-header-text">Forms &amp; Tables</span></li>
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-copy"></i>*/}
+                {/*        <div data-i18n="Extended UI">Extended UI</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="extended-ui-perfect-scrollbar.html" className="menu-link">*/}
+                {/*                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="extended-ui-text-divider.html" className="menu-link">*/}
+                {/*                <div data-i18n="Text Divider">Text Divider</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
 
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Elements">Form Elements</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="forms-basic-inputs.html" className="menu-link">
-                                <div data-i18n="Basic Inputs">Basic Inputs</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="forms-input-groups.html" className="menu-link">
-                                <div data-i18n="Input groups">Input groups</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li className="menu-item">
-                    <a href="/" className="menu-link menu-toggle">
-                        <i className="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Layouts">Form Layouts</div>
-                    </a>
-                    <ul className="menu-sub">
-                        <li className="menu-item">
-                            <a href="form-layouts-vertical.html" className="menu-link">
-                                <div data-i18n="Vertical Form">Vertical Form</div>
-                            </a>
-                        </li>
-                        <li className="menu-item">
-                            <a href="form-layouts-horizontal.html" className="menu-link">
-                                <div data-i18n="Horizontal Form">Horizontal Form</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                {/*<li className="menu-item">*/}
+                {/*    <a href="icons-boxicons.html" className="menu-link">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-crown"></i>*/}
+                {/*        <div data-i18n="Boxicons">Boxicons</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
 
-                <li className="menu-item">
-                    <a href="tables-basic.html" className="menu-link">
-                        <i className="menu-icon tf-icons bx bx-table"></i>
-                        <div data-i18n="Tables">Tables</div>
-                    </a>
-                </li>
 
-                <li className="menu-header small text-uppercase"><span className="menu-header-text">Misc</span>
-                </li>
-                <li className="menu-item">
-                    <a
-                        href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                        target="_blank"
-                        className="menu-link"
-                    >
-                        <i className="menu-icon tf-icons bx bx-support"></i>
-                        <div data-i18n="Support">Support</div>
-                    </a>
-                </li>
-                <li className="menu-item">
-                    <a
-                        href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                        target="_blank"
-                        className="menu-link"
-                    >
-                        <i className="menu-icon tf-icons bx bx-file"></i>
-                        <div data-i18n="Documentation">Documentation</div>
-                    </a>
-                </li>
+                {/*<li className="menu-header small text-uppercase"><span*/}
+                {/*    className="menu-header-text">Forms &amp; Tables</span></li>*/}
+
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-detail"></i>*/}
+                {/*        <div data-i18n="Form Elements">Form Elements</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="forms-basic-inputs.html" className="menu-link">*/}
+                {/*                <div data-i18n="Basic Inputs">Basic Inputs</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="forms-input-groups.html" className="menu-link">*/}
+                {/*                <div data-i18n="Input groups">Input groups</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a href="/" className="menu-link menu-toggle">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-detail"></i>*/}
+                {/*        <div data-i18n="Form Layouts">Form Layouts</div>*/}
+                {/*    </a>*/}
+                {/*    <ul className="menu-sub">*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="form-layouts-vertical.html" className="menu-link">*/}
+                {/*                <div data-i18n="Vertical Form">Vertical Form</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*        <li className="menu-item">*/}
+                {/*            <a href="form-layouts-horizontal.html" className="menu-link">*/}
+                {/*                <div data-i18n="Horizontal Form">Horizontal Form</div>*/}
+                {/*            </a>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
+
+                {/*<li className="menu-item">*/}
+                {/*    <a href="tables-basic.html" className="menu-link">*/}
+                {/*        <i className="menu-icon tf-icons bx bx-table"></i>*/}
+                {/*        <div data-i18n="Tables">Tables</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
+
+                {/*<li className="menu-header small text-uppercase"><span className="menu-header-text">Misc</span>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a*/}
+                {/*        href="https://github.com/themeselection/sneat-html-admin-template-free/issues"*/}
+                {/*        target="_blank"*/}
+                {/*        className="menu-link"*/}
+                {/*    >*/}
+                {/*        <i className="menu-icon tf-icons bx bx-support"></i>*/}
+                {/*        <div data-i18n="Support">Support</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
+                {/*<li className="menu-item">*/}
+                {/*    <a*/}
+                {/*        href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"*/}
+                {/*        target="_blank"*/}
+                {/*        className="menu-link"*/}
+                {/*    >*/}
+                {/*        <i className="menu-icon tf-icons bx bx-file"></i>*/}
+                {/*        <div data-i18n="Documentation">Documentation</div>*/}
+                {/*    </a>*/}
+                {/*</li>*/}
             </ul>
         </aside>
     )
