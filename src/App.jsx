@@ -1,4 +1,5 @@
 import SideBar from "./layout/SideBar.jsx";
+import SearchBar from "./component/SearchBar.jsx";
 
 function App({children}) {
     const href = window.location.href;
@@ -17,7 +18,11 @@ function App({children}) {
         <div className="layout-wrapper layout-content-navbar">
             <div className="layout-container">
                 <SideBar/>
-                {children}
+                <div className="layout-page">
+                    <SearchBar/>
+                    {children}
+                </div>
+                <div className="layout-overlay layout-menu-toggle"></div>
             </div>
         </div>
     )
