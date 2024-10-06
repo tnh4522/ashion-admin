@@ -62,7 +62,7 @@ function LogoAdmin() {
                       </g>
                     </svg>
                   </span>
-                <span className="app-brand-text demo text-body fw-bolder">Ashion</span>
+                <span className="app-brand-text demo text-body fw-bolder">Ashion Admin</span>
             </Link>
         </div>
     );
